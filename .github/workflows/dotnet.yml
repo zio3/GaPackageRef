@@ -19,7 +19,12 @@ jobs:
         dotnet-version: 5.0.x
 
     - name: Ensure GitHub NuGet Source
-      run: dotnet nuget add source https://nuget.pkg.github.com/zio3/index.json -n github2 -u zio3 -p 04fc3d27c9b43a717c9d2bd151983aee2ab27ad3 --store-password-in-clear-text
+      run: |
+        dotnet nuget add source https://nuget.pkg.github.com/zio3/index.json \
+          -n github \
+          -u zio3 \
+          -p ${{ secrets.GITHUB_TOKEN }} \
+          --store-password-in-clear-text
 
     - name: Restore dependencies
       run: dotnet restore  
