@@ -22,8 +22,8 @@ jobs:
       run: dotnet nuget add source https://nuget.pkg.github.com/zio3/index.json -n github2 -u zio3 -p 04fc3d27c9b43a717c9d2bd151983aee2ab27ad3 --store-password-in-clear-text
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore  
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore 
     - name: Test
       run: dotnet test --no-build --verbosity normal
