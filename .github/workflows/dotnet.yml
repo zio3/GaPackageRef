@@ -23,7 +23,7 @@ jobs:
         dotnet nuget add source https://nuget.pkg.github.com/zio3/index.json \
           -n github \
           -u zio3 \
-          -p ${{ secrets.GITHUB_TOKEN }} \
+          -p ${{ secrets.PACKAGE_REF }} \
           --store-password-in-clear-text
 
     - name: Restore dependencies
